@@ -39,6 +39,7 @@ def main():
                   "/scan",
                 #   "/waypoint",
                   "/waypoint_vis",
+                  "/cur_point_vis",
                   ]
     
     
