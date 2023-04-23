@@ -25,19 +25,23 @@ def parse_args():
 
 def main():
 
-    topic_list = ["/drive",
-                  "/odom",
-                  "/ackermann_cmd",
-                  "/map",
-                  "/clicked_point",
-                  "/commands/motor/speed",
-                  "/initialpose",
-                #   "/pf/pose/odom",
-                #   "/pf/viz/inferred_pose",
-                  "/scan",
-                  "/waypoint",
-                  "/waypoint_vis",
-                  ]
+    topic_list = ["-a"]
+
+    # topic_list = ["/drive",
+    #               "/odom",
+    #               "/ackermann_cmd",
+    #               "/map",
+    #               "/clicked_point",
+    #               "/commands/motor/speed",
+    #               "/initialpose",
+    #             #   "/pf/pose/odom",
+    #             #   "/pf/viz/inferred_pose",
+    #               "/scan",
+    #               "/waypoint",
+    #               "/waypoint_vis",
+    #               ]
+    
+    
     
     print(f"there are {len(topic_list)} topics that are being subscribed to:\n")
     bash_arg = ""
