@@ -48,6 +48,8 @@ def main():
     for arg in topic_list:
         print(arg)
         bash_arg += " " + arg + " "
+
+    print() # add a space to the terminal for viewing
     
     args = parse_args()
     
@@ -86,7 +88,7 @@ def main():
     # call cmd using os.system(cmd)
     print("calling bag command: ", cmd)
     os.system(cmd)
-    time.sleep(1000000)
+    # time.sleep(1000000)
     
 if __name__ == '__main__':
     main()
