@@ -37,7 +37,7 @@ def main():
                 #   "/pf/pose/odom",
                 #   "/pf/viz/inferred_pose",
                   "/scan",
-                  "/waypoint",
+                #   "/waypoint",
                   "/waypoint_vis",
                   ]
     
