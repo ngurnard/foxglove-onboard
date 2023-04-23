@@ -32,15 +32,17 @@ def main():
                   "/clicked_point",
                   "/commands/motor/speed",
                   "/initialpose",
-                  "/pf/pose/odom",
-                  "/pf/viz/inferred_pose",
+                #   "/pf/pose/odom",
+                #   "/pf/viz/inferred_pose",
                   "/scan",
                   "/waypoint",
                   "/waypoint_vis",
                   ]
     
+    print(f"there are {len(topic_list)} topics that are being subscribed to:\n")
     bash_arg = ""
     for arg in topic_list:
+        print(arg)
         bash_arg += " " + arg + " "
     
     args = parse_args()
