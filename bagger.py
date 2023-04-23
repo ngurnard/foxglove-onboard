@@ -24,6 +24,24 @@ def parse_args():
     return parser.parse_args()
 
 def main():
+
+    topic_list = ["/drive",
+                  "/odom",
+                  "/ackermann_cmd",
+                  "/map",
+                  "/clicked_point",
+                  "/commands/motor/speed",
+                  "/initialpose",
+                  "/pf/pose/odom",
+                  "/pf/viz/inferred_pose",
+                  "/scan",
+                  "/waypoint",
+                  "/waypoint_vis",
+                  ]
+    
+    bash_arg = ""
+    for arg in topic_list:
+        bash_arg += " " + arg + " "
     
     args = parse_args()
     
@@ -55,7 +73,9 @@ def main():
     else:
         save_path = os.path.join(home_dir, bag_path, date_time)
     
-    cmd = ['ros2', 'bag', 'record', '-s', 'mcap', '-a', '-o', save_path]
+    # cmd = ['ros2', 'bag', 'record', '-s', 'mcap', '-a', '-o', save_path]
+    cmd = ['ros2', 'bag', 'record', '-s', 'mcap', bash_arg, '-o', save_path]
+
     cmd = ' '.join(cmd)
     # call cmd using os.system(cmd)
     print("calling bag command: ", cmd)
