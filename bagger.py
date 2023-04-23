@@ -25,21 +25,21 @@ def parse_args():
 
 def main():
 
-    topic_list = ["-a"]
+    # topic_list = ["-a"] # all topics cmd currently broken in ros
 
-    # topic_list = ["/drive",
-    #               "/odom",
-    #               "/ackermann_cmd",
-    #               "/map",
-    #               "/clicked_point",
-    #               "/commands/motor/speed",
-    #               "/initialpose",
-    #             #   "/pf/pose/odom",
-    #             #   "/pf/viz/inferred_pose",
-    #               "/scan",
-    #               "/waypoint",
-    #               "/waypoint_vis",
-    #               ]
+    topic_list = ["/drive",
+                  "/odom",
+                  "/ackermann_cmd",
+                  "/map",
+                  "/clicked_point",
+                  "/commands/motor/speed",
+                  "/initialpose",
+                #   "/pf/pose/odom",
+                #   "/pf/viz/inferred_pose",
+                  "/scan",
+                  "/waypoint",
+                  "/waypoint_vis",
+                  ]
     
     
     
