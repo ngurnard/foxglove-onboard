@@ -37,11 +37,12 @@ def main():
                 #   "/pf/pose/odom",
                 #   "/pf/viz/inferred_pose",
                   "/scan",
-                #   "/waypoint",
+                #   "/waypoint", # this needs to be an exception with -e
                   "/waypoint_vis",
                   "/cur_point_vis",
                   ]
     
+    exception_list = ["waypoint"]
     
     
     print(f"there are {len(topic_list)} topics that are being subscribed to:\n")
@@ -49,6 +50,11 @@ def main():
     for arg in topic_list:
         print(arg)
         bash_arg += " " + arg + " "
+
+    bash_ex_arg = ' -x '  
+    for ex in exception_list:
+        bash_ex_arg += ex + "|"
+    bash_ex_arg += '" '
 
     print() # add a space to the terminal for viewing
     
@@ -83,7 +89,7 @@ def main():
         save_path = os.path.join(home_dir, bag_path, date_time)
     
     # cmd = ['ros2', 'bag', 'record', '-s', 'mcap', '-a', '-o', save_path]
-    cmd = ['ros2', 'bag', 'record', '-s', 'mcap', bash_arg, '-o', save_path]
+    cmd = ['ros2', 'bag', 'record', '-s', 'mcap', bash_arg, bash_ex_arg, '-o', save_path]
 
     cmd = ' '.join(cmd)
     # call cmd using os.system(cmd)
