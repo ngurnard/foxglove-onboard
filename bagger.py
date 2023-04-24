@@ -89,7 +89,7 @@ def main():
     # call cmd using os.system(cmd)
     print("calling bag command: ", cmd)
     os.system(cmd)
-    # time.sleep(1000000)
+    time.sleep(1000000)
     
 if __name__ == '__main__':
     main()
